@@ -1,0 +1,25 @@
+.podcast-search{
+    background-color: var(--theme);
+    color: var(--white);
+    padding: 1rem;
+    border: 2px solid var(--purple-grey);
+    border-radius: 5px;
+    width: 70%;
+    margin-bottom: 10px;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 10px) and (max-width: 768px) {
+    .podcast-search{
+        width: 90%;
+    }
+}
+
+.podcast-search:focus{
+    border: 2px solid var(--white);
+    outline: none;
+}
+
+.podcast-search::placeholder{
+    color: var(--purple-grey);
+}

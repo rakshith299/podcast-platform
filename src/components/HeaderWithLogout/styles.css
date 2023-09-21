@@ -1,0 +1,8 @@
+.active{
+    color: var(--white) !important;
+}
+
+a, a img, a:focus, a:active {
+    border: none;
+    outline: none;
+  }

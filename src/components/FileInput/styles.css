@@ -1,0 +1,32 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.custom-file-input{
+        background-color: var(--theme);
+        color: var(--white);
+        padding: 1rem;
+        border: 2px solid var(--purple-grey);
+        border-radius: 5px;
+        width: 100% ;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        display: block;
+        
+}
+
+
+.grey-placeholder{
+    color: var(--purple-grey);
+}
+
+.active{
+    border: 2px solid green !important;
+}

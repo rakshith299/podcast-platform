@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.custom-input{
+    background-color: var(--theme);
+    color: var(--white);
+    padding: 1rem;
+    border: 2px solid var(--purple-grey);
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.custom-input:focus{
+    border: 2px solid var(--white);
+    outline: none;
+}
+
+.custom-input::placeholder{
+    color: var(--purple-grey);
+}

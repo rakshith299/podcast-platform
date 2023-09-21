@@ -1,0 +1,66 @@
+.each-episode-cont{
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--purple-grey);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.each-episode-title{
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 0.7rem;
+}
+
+.each-episode-description{
+    color:  var(--purple-grey);
+    font-size: 16px;
+    padding-bottom: 0.7rem;
+}
+
+.each-episode-btn{
+    background-color: transparent;
+    width: 120px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: var(--white);
+    outline: none;
+    transition-duration: 0.4s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.each-episode-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.each-episode-btn:active{
+    transform: translateY(4px);
+}
+
+.play{
+    padding-left: 0.5rem;
+}
+
+@media screen and (min-width: 10px) and (max-width: 768px) {
+    .each-episode-title{
+        font-size: 18px;
+    }
+
+    .each-episode-description{
+        font-size: 16px;
+    }
+
+    .each-episode-btn{
+        width: 110px;
+        height: 34px;
+        font-size: 14px;
+    }
+}

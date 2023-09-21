@@ -1,0 +1,27 @@
+.custom-btn{
+    background-color: var(--purple-grey);
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 50px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.custom-btn:hover{
+    background-color: white;
+}
+
+
+.custom-btn:active{
+    transform: translateY(4px);
+}
+
+.btn-cont{
+    width: 100%;;
+}

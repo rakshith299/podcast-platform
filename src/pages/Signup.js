@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {db, storage, auth} from "../firebase.js";
 import {setDoc, doc} from "firebase/firestore";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../slices/userSlice";
 import {ToastContainer, toast} from "react-toastify";
 import FileInput from "../components/FileInput";
@@ -20,18 +20,27 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const [cPassword, setCPassword] = useState(""); 
     const [profilePicUrl, setProfilePicUrl] = useState(""); 
-    
+
+    let userFromRedux = useSelector((state) => state.user.user);
+      
 
     const [loading, setLoading] = useState(false);
 
     let navigate = useNavigate();
     let dispatch = useDispatch();
 
+    if(userFromRedux.uid){
+       navigate("/podcasts");
+        
+    }
+
     async function handleSignup(){
         console.log("signed up");
 
         if(password === cPassword && fullName !== "" && email !== ""){
-            if(password.length >= 8){
+            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if(password.length >= 8 && passwordRegex.test(password)){
                 try{
 
                     // loading 
@@ -86,7 +95,12 @@ const Signup = () => {
                     setLoading(false);
                 }
             }else{
-                toast.error("Password should contain atleast 8 characters")
+                if(password.length < 8){
+                    toast.error("Password should contain atleast 8 characters")
+                }else if(!passwordRegex.test(password)){
+                    toast.error("Password should have atleast 1 Upper case, 1 Lower Case, 1 Number, 1 Special Character")
+                }
+                
 
                 setPassword("");
                 setCPassword("");

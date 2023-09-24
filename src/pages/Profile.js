@@ -114,7 +114,7 @@ const Profile = () => {
 
                         <div className="profile-btn-cont">
                             <Button text = "Update Profile" onClick = {navigateToUpdateProfile} disabled = {false}/>
-                            <Button text = "Back To Podcasts" onClick = {navigateToPodcasts} disabled = {false}/>
+                            <Button text = "Go To Podcasts" onClick = {navigateToPodcasts} disabled = {false}/>
                         </div>
                        
                     </div>

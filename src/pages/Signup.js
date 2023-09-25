@@ -29,7 +29,7 @@ const Signup = () => {
     let navigate = useNavigate();
     let dispatch = useDispatch();
 
-    if(userFromRedux.uid){
+    if(userFromRedux){
        navigate("/podcasts");
         
     }
@@ -37,7 +37,9 @@ const Signup = () => {
     async function handleSignup(){
         console.log("signed up");
 
-        if(password === cPassword && fullName !== "" && email !== ""){
+        let nameRegex = /^[a-zA-Z ]+$/;
+
+        if(password === cPassword && fullName !== "" && email !== "" && nameRegex.test(fullName)){
             let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
             if(password.length >= 8 && passwordRegex.test(password)){
@@ -114,6 +116,8 @@ const Signup = () => {
                 toast.error("Name cannot be empty")
             }else if(email === ""){
                 toast.error("Email cannot be empty")
+            }else if(!nameRegex.test(fullName)){
+                toast.error("Enter valid name");
             }
             
         }

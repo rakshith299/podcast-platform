@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom"
 import Header from "../components/Header";
 import Input from "../components/Input";
@@ -29,10 +29,14 @@ const Signup = () => {
     let navigate = useNavigate();
     let dispatch = useDispatch();
 
-    if(userFromRedux){
-       navigate("/podcasts");
-        
-    }
+    useEffect(() => {
+        if(userFromRedux){
+            navigate("/podcasts");
+             
+         }
+    }, [])
+
+    
 
     async function handleSignup(){
         console.log("signed up");

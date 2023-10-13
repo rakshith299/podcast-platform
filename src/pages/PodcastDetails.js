@@ -20,6 +20,7 @@ const PodcastDetails = () => {
 
     let navigate = useNavigate();
 
+
     useEffect(() => {
         async function getPodcastDetails(){
             if(id){
@@ -77,9 +78,6 @@ const PodcastDetails = () => {
 
     // close 
 
-    
-
-
     console.log(episodes);
     console.log(podcastdetails, "podcast-details");
     let totalNoOfepisode = episodes.length;
@@ -122,7 +120,9 @@ const PodcastDetails = () => {
                                         description={eachEpisode.description} 
                                         audioFile={eachEpisode.audioFile} 
                                         index={totalNoOfepisode = totalNoOfepisode - index}
-                                        onClick={(file) => selectNewFileToPlay(file)}/>
+                                        epiId = {eachEpisode.id}
+                                        setFileFn ={(file) => setPlayingFile(file)} />
+                                        
                                     ))
                                 }
                             </div> : 

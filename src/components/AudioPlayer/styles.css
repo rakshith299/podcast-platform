@@ -38,6 +38,8 @@
     margin-left: 1rem;
     margin-right: 1rem;
 
+
+
 }
 
 .audio-cursor{
@@ -51,7 +53,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-
 
 }
 
@@ -100,6 +101,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
 }
 
 .audio-features{
@@ -108,6 +110,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-left: 0.5rem;
+
+
 }
 
 
@@ -140,7 +145,7 @@
         gap: 0.4rem;
         margin-left: 0px;
         margin-right: 0px;
-        width: 40%;
+        width: 50%;
     }
 
     .range-input{
@@ -149,6 +154,14 @@
 
     .volume{
         width: 30%;
+    }
+
+    .vol-cont{
+        width: 25%;
+    }
+
+    .audio-features{
+        justify-content: space-between;
     }
     
 }
@@ -175,11 +188,11 @@
     }
 
     .audio-duration-cont{
-        font-size: 14px;
+        font-size: 13px;
         gap: 0.4rem;
         margin-left: 0px;
         margin-right: 0px;
-        width: 50%;
+        width: 55%;
     }
 
     .range-input{
@@ -188,5 +201,9 @@
     
     .volume{
         width: 40%;
+    }
+
+    .audio-features{
+        justify-content: space-between;
     }
 }
